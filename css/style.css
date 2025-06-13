@@ -86,3 +86,40 @@ footer {
     text-shadow: none;
   }
 }
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  gap: 0;
+  margin: 40px auto;
+  width: fit-content;
+  border: 5px solid #222;
+  box-shadow: 0 0 20px #000;
+}
+
+.casa {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #eee;
+  user-select: none;
+  cursor: pointer;
+}
+
+.clara {
+  background-color: #2e2e2e;
+}
+
+.escura {
+  background-color: #151515;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
