@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jogo - Pinóquio Terror</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Estilo básico para o tabuleiro */
+    #chessboard {
+      margin: 20px auto;
+      width: 320px;
+      height: 320px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+      border: 2px solid crimson;
+      box-shadow: 0 0 15px crimson;
+    }
+    .square {
+      width: 40px;
+      height: 40px;
+    }
+    .light {
+      background-color: #eee;
+    }
+    .dark {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pinóquio: O Conto Sombrio</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
+        <li><a href="jogo.html" class="active">Jogo</a></li>
+        <li><a href="jumpscares.html">Sustos</a></li>
+        <li><a href="creditos.html">Créditos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="jogo">
+      <h2>Jogo de Xadrez Temático</h2>
+      <button id="startGame">Iniciar Jogo vs Bot</button>
+      <div id="chessboard"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Grupo Apresentação</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/chess.js"></script> <!-- futuramente o código do jogo -->
+</body>
+</html>
