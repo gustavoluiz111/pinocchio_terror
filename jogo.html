@@ -82,16 +82,16 @@ imagens/
 
   <script>
     const tabuleiro = document.getElementById('tabuleiro');
-    const pecasIniciais = [
-      ['G1', 'M', 'G2', 'F1', 'P1', 'G3', 'M', 'G1'],
-      ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
-      ['', '', '', '', '', '', '', ''],
-      ['', '', '', '', '', '', '', ''],
-      ['', '', '', '', '', '', '', ''],
-      ['', '', '', '', '', '', '', ''],
-      ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
-      ['J', 'M', 'G2', 'S', 'X', 'G3', 'M', 'J']
-    ];
+  const pecasIniciais = [
+  ['grilo1', 'marionete', 'grilo2', 'fada_azul', 'pinocchio', 'grilo3', 'marionete', 'grilo1'],
+  ['peao_boneco', 'peao_boneco', 'peao_boneco', 'peao_boneco', 'peao_boneco', 'peao_boneco', 'peao_boneco', 'peao_boneco'],
+  ['', '', '', '', '', '', '', ''],
+  ['', '', '', '', '', '', '', ''],
+  ['', '', '', '', '', '', '', ''],
+  ['', '', '', '', '', '', '', ''],
+  ['peao_crianca', 'peao_crianca', 'peao_crianca', 'peao_crianca', 'peao_crianca', 'peao_crianca', 'peao_crianca', 'peao_crianca'],
+  ['joao_honesto', 'marionete', 'grilo2', 'stromboli', 'x', 'grilo3', 'marionete', 'joao_honesto']
+];
 
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
@@ -101,10 +101,12 @@ imagens/
 
         const peca = pecasIniciais[i][j];
         if (peca) {
-          const span = document.createElement('span');
-          span.className = 'peca ' + peca;
-          span.textContent = peca;
-          casa.appendChild(span);
+         const img = document.createElement('img');
+img.src = `imagens/${peca.toLowerCase()}.png`;
+img.alt = peca;
+img.style.width = '100%';
+img.style.height = '100%';
+casa.appendChild(img);
         }
 
         tabuleiro.appendChild(casa);
