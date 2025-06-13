@@ -4,5 +4,113 @@ css/
 js/
   chess.js
 imagens/
-  (futuramente as imagens das peças temáticas)
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jogo Temático - Pinóquio Sombrio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .tabuleiro {
+      display: grid;
+      grid-template-columns: repeat(8, 60px);
+      grid-template-rows: repeat(8, 60px);
+      gap: 0;
+      margin: 40px auto;
+      width: fit-content;
+      border: 5px solid #222;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .casa {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      color: #eee;
+    }
+
+    .clara {
+      background-color: #2e2e2e;
+    }
+
+    .escura {
+      background-color: #151515;
+    }
+
+    .peca {
+      cursor: pointer;
+    }
+
+    /* Exemplo de classes para peças temáticas */
+    .P1 { color: #ffe066; } /* Pinocchio */
+    .F1 { color: #8a2be2; } /* Fada Azul */
+    .G1, .G2, .G3 { color: #6ff; } /* Grilos */
+    .M { color: #ccc; } /* Marionetes */
+    .S { color: #f00; } /* Stromboli */
+    .J { color: #fa0; } /* João Honesto */
+    .X { color: #888; } /* Peões sombrio */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tabuleiro Temático - Pinóquio</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
+        <li><a href="jogo.html">Jogo</a></li>
+        <li><a href="jumpscares.html">Sustos</a></li>
+        <li><a href="creditos.html">Créditos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="tabuleiro" id="tabuleiro"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Grupo Apresentação</p>
+  </footer>
+
+  <script>
+    const tabuleiro = document.getElementById('tabuleiro');
+    const pecasIniciais = [
+      ['G1', 'M', 'G2', 'F1', 'P1', 'G3', 'M', 'G1'],
+      ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+      ['', '', '', '', '', '', '', ''],
+      ['', '', '', '', '', '', '', ''],
+      ['', '', '', '', '', '', '', ''],
+      ['', '', '', '', '', '', '', ''],
+      ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+      ['J', 'M', 'G2', 'S', 'X', 'G3', 'M', 'J']
+    ];
+
+    for (let i = 0; i < 8; i++) {
+      for (let j = 0; j < 8; j++) {
+        const casa = document.createElement('div');
+        casa.classList.add('casa');
+        casa.classList.add((i + j) % 2 === 0 ? 'clara' : 'escura');
+
+        const peca = pecasIniciais[i][j];
+        if (peca) {
+          const span = document.createElement('span');
+          span.className = 'peca ' + peca;
+          span.textContent = peca;
+          casa.appendChild(span);
+        }
+
+        tabuleiro.appendChild(casa);
+      }
+    }
+  </script>
+</body>
+</html>
 
