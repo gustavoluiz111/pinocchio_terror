@@ -123,3 +123,23 @@ img {
   height: 100%;
   pointer-events: none;
 }
+.controles {
+  margin-bottom: 20px;
+}
+
+.controles button {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controles button:hover {
+  background-color: darkred;
+  box-shadow: 0 0 10px crimson;
+}
